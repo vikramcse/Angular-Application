@@ -2,168 +2,156 @@
 	<p class="bg-danger">
 		Fields marked <span style="color: red">*</span> are mandatory.
 	</p>
-  <form class="form-horizontal" ng-submit="submitForm(userForm.$valid)" name="userForm" novalidate>
-	  <div class="form-group">
-	    <label class="col-sm-2 control-label required">First Name</label>
-	    	<div class="col-sm-8"
-	    						ng-class="{ 'has-error' : userForm.firstName.$invalid && !userForm.firstName.$pristine }">
+	<form class="form-horizontal" ng-submit="submitForm(userForm.$valid)" name="userForm" novalidate>
+		<div class="form-group">
+			<label class="col-sm-2 control-label required">First Name</label>
+			<div class="col-sm-8"
+			ng-class="{ 'has-error' : userForm.firstName.$invalid && !userForm.firstName.$pristine }">
 
-	      <input type="text" name="firstName" class="form-control" placeholder="First Name" 
-	      									ng-model="user.firstName" required>
+			<input type="text" name="firstName" class="form-control" placeholder="First Name" 
+			ng-model="firstName" required>
 
-	      <p ng-show="userForm.firstName.$invalid && !userForm.firstName.$pristine" class="help-block">
-	      									First Name is required.</p>
-	    	</div>
-	  </div>
-	  <div class="form-group">
-	    <label class="col-sm-2 control-label">Last Name</label>
-	    <div class="col-sm-8">
-	      <input type="text" name="LastName" class="form-control" placeholder="Last Name" 
-	      									ng-model="user.lastName">
-	    </div>
-	  </div>
-	  <div class="form-group">
-	    <label class="col-sm-2 control-label required">Email</label>
-	    <div class="col-sm-8" 
-	    						ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine }">
+			<p ng-show="userForm.firstName.$invalid && !userForm.firstName.$pristine" class="help-block">
+				First Name is required.</p>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Last Name</label>
+			<div class="col-sm-8">
+				<input type="text" name="LastName" class="form-control" placeholder="Last Name" 
+				ng-model="lastName">
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label required">Email</label>
+			<div class="col-sm-8" 
+			ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine }">
 
-	      <input type="eamil" name="email" class="form-control" placeholder="Email" 
-	      									ng-model="user.email" required>
+			<input type="eamil" name="email" class="form-control" placeholder="Email" 
+			ng-model="email" required>
 
-	      <p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block">
-	      									Enter a valid email.</p>
-	    </div>
-	  </div>
-	  <div class="form-group">
-	  	<label class="col-sm-2 control-label required">Sex</label>
-	    <div class="col-sm-8" 
-	    						ng-class="{ 'has-error' : userForm.sex.$invalid && !userForm.sex.$pristine }">
-	    	<select class="form-control" name="sex" ng-model="user.sex" required >
-		    	<option value="">Select Sex</option>
-		      <option value="male">Male</option>
-		      <option value="female">Female</option>
-      	</select>
+			<p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block">
+				Enter a valid email.</p>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label required">Sex</label>
+			<div class="col-sm-8" 
+			ng-class="{ 'has-error' : userForm.sex.$invalid && !userForm.sex.$pristine }">
+			<select class="form-control" name="sex" ng-model="sex" required >
+				<option value="">Select Sex</option>
+				<option value="male">Male</option>
+				<option value="female">Female</option>
+			</select>
 
-      	<p ng-show="userForm.sex.$invalid && !userForm.sex.$pristine" class="help-block">
-	      									Please select your sex.</p>
-	    </div>
-	  </div>
-	  <div class="form-group">
-	  	<label class="col-sm-2 control-label required">Maritial Status</label>
-	    <div class="col-sm-8" 
-	    						ng-class="{ 'has-error' : userForm.wife.$invalid && !userForm.wife.$pristine }">
-	    	<select class="form-control" name="wife" ng-model="user.wife" required>
-	    		<option value="">Select status</option>
-	        <option value="bachlor">Bachlor</option>
-	        <option value="married">Married</option>
-	        <option value="divorced">Divorced</option>
-      	</select>
+			<p ng-show="userForm.sex.$invalid && !userForm.sex.$pristine" class="help-block">
+				Please select your sex.</p>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label required">Maritial Status</label>
+			<div class="col-sm-8" 
+			ng-class="{ 'has-error' : userForm.wife.$invalid && !userForm.wife.$pristine }">
+			<select class="form-control" name="wife" ng-model="wife" required>
+				<option value="">Select status</option>
+				<option value="bachlor">Bachlor</option>
+				<option value="married">Married</option>
+				<option value="divorced">Divorced</option>
+			</select>
 
-      	<p ng-show="userForm.wife.$invalid && !userForm.wife.$pristine" class="help-block">
-	        								Please select your maritial status.</p>
-	    </div>
-	  </div>
-	  <div class="form-group">
-	  	<label class="col-sm-2 control-label">Occupation</label>
-	    <div class="col-sm-8">
-	    	<select class="form-control" name="job" ng-model="user.job">
-	        <option value="student">Student</option>
-	        <option value="engineer">Engineer</option>
-	        <option value="doctor">Doctor</option>
-	        <option value="government">Govertment Servent</option>
-	        <option value="business">Business Man</option>
-	        <option value="other" selected>Other</option>
-      	</select>
-	    </div>
-	  </div>
-	  <div class="form-group">
-	    <label class="col-sm-2 control-label required">Mobile Number</label>
-	    <div class="col-sm-8" 
-	    						ng-class="{ 'has-error' : userForm.tel.$invalid && !userForm.tel.$pristine }">
-	      <input type="tel" class="form-control" placeholder="Mobile Number" name="tel" ng-model="user.tel" 								required ng-minlength="10" ng-maxlength="11">
-	    </div>
+			<p ng-show="userForm.wife.$invalid && !userForm.wife.$pristine" class="help-block">
+				Please select your maritial status.</p>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label required">Mobile Number</label>
+			<div class="col-sm-8"
+			ng-class="{ 'has-error' : userForm.tel.$invalid && !userForm.tel.$pristine }">
 
-	    <p ng-show="userForm.tel.$invalid && !userForm.tel.$pristine" class="help-block">
-	        								Please enter your mobile number.</p>
-	  </div>
-	  <div class="form-group">
-	  	<label class="col-sm-2 control-label">City</label>
-	    <div class="col-sm-8">
-	    	<select class="form-control" name="city" ng-model="user.city">
-	    		<option value="">Select City</option>
-	        <option value="pune">Pune</option>
-	        <option value="mumbai">Mumbai</option>
-      	</select>
-	    </div>
-	  </div>
-	  <div class="form-group">
-	    <label class="col-sm-2 control-label">Address</label>
-	    <div class="col-sm-8">
-	      <textarea class="form-control" rows="3" placeholder="Address" name="address" ng-model="user.address">
-	      </textarea>
-	  	</div>
-	  </div>
-	  <div class="form-group">
-	  	<label class="col-sm-2 control-label">Site Location</label>
-	    <div class="col-sm-8">
-	    	<select class="form-control" name="siteloc" ng-model="user.siteloc" required>
-	        <option>1</option>
-      	</select>
-	    </div>
-	  </div>
-	  <div class="form-group">
-	  	<label class="col-sm-2 control-label required">Approx. Budget</label>
-	    <div class="col-sm-8" 
-	    						ng-class="{ 'has-error' : userForm.budget.$invalid && !userForm.budget.$pristine }">
-	    	<select class="form-control" name="budget" ng-model="user.budget" required>
-	        <option value="">Select Budget</option>
-	        <option value="1">1</option>
-	        <option value="2">2</option>
-	        <option value="3">3</option>
-	        <option value="4">4</option>
-      	</select>
+			<input type="tel" name="tel" class="form-control" placeholder="Phone Number" 
+			ng-model="tel" required ng-minlength="10" ng-maxlength="11" required>
 
-      	<p ng-show="userForm.budget.$invalid && !userForm.budget.$pristine" class="help-block">
-	        								Please select your budget.</p>
-	    </div>
-	  </div>
-	  <div class="form-group">
-	  	<label class="col-sm-2 control-label required">Property Type</label>
-	    <div class="col-sm-8" 
-	    						ng-class="{ 'has-error' : userForm.size.$invalid && !userForm.size.$pristine }">
-	    	<select class="form-control" name="size" ng-model="size" required>
-	    		<option value="">Select type</option>
-	        <option value="1RK">1Rk</option>
-	        <option value="1BHK">1BHK</option>
-	        <option value="2BHK">2BHK</option>
-	        <option value="3BHK">3BHK</option>
-      	</select>
+			<p ng-show="userForm.tel.$invalid && !userForm.tel.$pristine" class="help-block">
+			Please enter your mobile number.</p>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">City</label>
+			<div class="col-sm-8">
+				<select class="form-control" name="city" ng-model="city">
+					<option value="">Select City</option>
+					<option value="pune">Pune</option>
+					<option value="mumbai">Mumbai</option>
+				</select>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Address</label>
+			<div class="col-sm-8">
+				<textarea class="form-control" rows="3" placeholder="Address" name="address" ng-model="address">
+				</textarea>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Site Location</label>
+			<div class="col-sm-8">
+				<select class="form-control" name="siteloc" ng-model="siteloc" required>
+					<option>1</option>
+				</select>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label required">Approx. Budget</label>
+			<div class="col-sm-8" 
+			ng-class="{ 'has-error' : userForm.budget.$invalid && !userForm.budget.$pristine }">
+			<select class="form-control" name="budget" ng-model="budget" required>
+				<option value="">Select Budget</option>
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+			</select>
 
-      	<p ng-show="userForm.size.$invalid && !userForm.size.$pristine" class="help-block">
-	        								Please select your appartment type.</p>
-	    </div>
-	  </div>
-	  <div class="form-group">
-	  	<label class="col-sm-2 control-label required">Rent / Purchase</label>
-	    <div class="col-sm-8" 
-	    							ng-class="{ 'has-error' : userForm.rp.$invalid && !userForm.rp.$pristine }">
-	    	<select class="form-control" name="rp" ng-model="rp" required>
-	    		<option value="">Select</option>
-	        <option value="rent">Rent</option>
-	        <option value="purchase">Purchase</option>
-	        <option value="loan">Bank loan</option>
-      	</select>
+			<p ng-show="userForm.budget.$invalid && !userForm.budget.$pristine" class="help-block">
+				Please select your budget.</p>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label required">Property Type</label>
+			<div class="col-sm-8" 
+			ng-class="{ 'has-error' : userForm.size.$invalid && !userForm.size.$pristine }">
+			<select class="form-control" name="size" ng-model="size" required>
+				<option value="">Select type</option>
+				<option value="1RK">1Rk</option>
+				<option value="1BHK">1BHK</option>
+				<option value="2BHK">2BHK</option>
+				<option value="3BHK">3BHK</option>
+			</select>
 
-				<p ng-show="userForm.rp.$invalid && !userForm.rp.$pristine" class="help-block">
-	        								Please select your appartment type.</p>      	
-	    </div>
-	  </div>
-	  <div class="form-group">
-	  	<span class="col-sm-2"></span>
-	      <div class="col-sm-8">
-	      	<button type="submit" class="btn btn-primary btn-sm btn-block" ng-disabled="userForm.$invalid">
-	      					Sign in</button>
-	      </div>
-	  </div>
-	</form>
-</div>
+			<p ng-show="userForm.size.$invalid && !userForm.size.$pristine" class="help-block">
+				Please select your appartment type.</p>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label required">Rent / Purchase</label>
+			<div class="col-sm-8" 
+			ng-class="{ 'has-error' : userForm.rp.$invalid && !userForm.rp.$pristine }">
+			<select class="form-control" name="rp" ng-model="rp" required>
+				<option value="">Select</option>
+				<option value="rent">Rent</option>
+				<option value="purchase">Purchase</option>
+				<option value="loan">Bank loan</option>
+			</select>
+
+			<p ng-show="userForm.rp.$invalid && !userForm.rp.$pristine" class="help-block">
+				Please select your appartment type.</p>      	
+			</div>
+		</div>
+		<div class="form-group">
+			<span class="col-sm-2"></span>
+				<div class="col-sm-8">
+					<button type="submit" class="btn btn-primary btn-sm btn-block" ng-disabled="userForm.$invalid">Submit</button>
+				</div>
+			</div>
+		</form>
+	</div>
