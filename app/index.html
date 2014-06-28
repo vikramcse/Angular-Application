@@ -13,7 +13,6 @@
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/font-awesome.css">
     <!-- endbuild -->
 </head>
 <body ng-app="abhiApp">
@@ -26,8 +25,8 @@
             <a class="navbar-brand"><img src="images/logo.png"></a>
         </div>
         <ul class="nav navbar-nav navbar-right" style="margin-right: 5px">
-            <li><a href="/#/login">Sign in</a></li>
-            <li><a href="/#/logout">Sign out</a></li>
+            <li><a ng-show-auth="logout" href="/#/login">Sign in</a></li>
+            <li><a ng-show-auth="login" href="/#/logout">Sign out</a></li>
         </ul>
     </nav>
 
@@ -56,6 +55,8 @@
     <!-- endbuild -->
 
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="lib/routeSecurity.js"></script>
+    <script src="lib/module.simpleLoginTools.js"></script>
     <script src="scripts/app.js"></script>
     <script src="scripts/controllers/main.js"></script>
     <script src="scripts/controllers/about.js"></script>

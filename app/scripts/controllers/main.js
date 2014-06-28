@@ -9,10 +9,12 @@
  * Controller of the abhijitApp
  */
 angular.module('abhiApp')
-  .controller('MainCtrl', function ($scope, FBURL, $firebase) {
+  .controller('MainCtrl', function ($scope, FBURL, $firebase, $firebaseSimpleLogin) {
   		var custRef = new Firebase(FBURL);
   		var formRef = custRef.child('forms');
   		var fireForm = $firebase(formRef);
+
+  		$scope.simpleLogin = $firebaseSimpleLogin(custRef);
   		
   		$scope.firstName = null;
   		$scope.lastName = 'Not Specified';

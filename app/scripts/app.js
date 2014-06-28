@@ -16,7 +16,9 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'firebase'
+    'firebase',
+    'routeSecurity',
+    'simpleLoginTools'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -37,11 +39,13 @@ angular
         controller: 'LogoutCtrl'
       })
       .when('/dash', {
-        template: 'HI there',
-        controller:'DashCtrl'
+        templateUrl: 'views/dashboard.html',
+        controller:'DashCtrl',
+        authRequired: true
       })
       .otherwise({
         redirectTo: '/'
       });
   })
-  .constant('FBURL', 'https://intense-customer.firebaseio.com/');
+  .constant('FBURL', 'https://intense-customer.firebaseio.com/')
+  .constant('loginRedirectPath', '/login');
