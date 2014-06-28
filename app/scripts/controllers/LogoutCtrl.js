@@ -10,6 +10,8 @@
 	  		$scope.simpleLogin = $firebaseSimpleLogin(custRef);
 
 	  		$scope.simpleLogin.$logout();
-	  		$window.location.href='/#/login';
+        	$window.location.reload();
+	  		console.log('logging out....');
+	  		$window.location.href='/#/';
 		});
 })(window.angular);

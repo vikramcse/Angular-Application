@@ -25,6 +25,8 @@
             <a class="navbar-brand"><img src="images/logo.png"></a>
         </div>
         <ul class="nav navbar-nav navbar-right" style="margin-right: 5px">
+            <li><a ng-show-auth="login" href="/#/dash">Dashboard</a></li>
+            <li><a ng-show-auth="login" href="/#/update">Update</a></li>
             <li><a ng-show-auth="logout" href="/#/login">Sign in</a></li>
             <li><a ng-show-auth="login" href="/#/logout">Sign out</a></li>
         </ul>
@@ -62,7 +64,8 @@
     <script src="scripts/controllers/about.js"></script>
     <script src="scripts/controllers/DashCtrl.js"></script>
     <script src="scripts/controllers/LoginCtrl.js"></script>
-     <script src="scripts/controllers/LogoutCtrl.js"></script>
+    <script src="scripts/controllers/LogoutCtrl.js"></script>
+    <script src="scripts/controllers/UpdateCtrl.js"></script>
     <!-- endbuild -->
 </body>
 </html>

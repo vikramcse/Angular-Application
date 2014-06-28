@@ -26,11 +26,12 @@
 				});
 			});
 
+			
 			$scope.toggleDetail = function (row) {
 				$scope.$index = row;
 				$scope.currentVal = $scope.messages[row].val;
-				//console.log($scope.currentVal);
+				
 			};
-			
+
 		});
 })(window.angular);

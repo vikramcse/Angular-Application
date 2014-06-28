@@ -46,7 +46,8 @@ body {
   text-align: center;
   border-bottom: 1px solid #e5e5e5;
   margin-top: 100px;
-  margin-left: 10px;
+  margin-left: 100px;
+  margin-right: 100px;
 }
 
 .form-horizontal {
@@ -54,12 +55,18 @@ body {
   padding-right: 50px;
 }
 
+.update-div {
+  margin-top: 50px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
 .form-group .control-label.required:after { 
    content:"*";
    color:red;
 }
-
-
+.help-block {
+  font-size: 10px;
+}
 .sign-out-button {
   padding-top: 8px;
   padding-right: 20px;

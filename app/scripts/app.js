@@ -34,6 +34,11 @@ angular
         templateUrl: 'views/login.html',
         controller: 'LoginCtrl'
       })
+      .when('/update', {
+        templateUrl: 'views/update.html',
+        controller: 'UpdateCtrl',
+        authRequired: true
+      })
       .when('/logout', {
         template: 'Logging out ...',
         controller: 'LogoutCtrl'

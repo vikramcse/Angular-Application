@@ -15,6 +15,8 @@
                                 <th>Last Name</th>
                                 <th>Email</th>
                                 <th>Mobile Number</th>
+                                <th>City</th>
+                                <th>gender</th>
                             </tr>
                         </thead>
                         <tbody >
@@ -24,6 +26,8 @@
                                 <td>{{form.lastName}}</td>
                                 <td>{{form.email}}</td>
                                 <td>{{form.tel}}</td>
+                                <td>{{form.city}}</td>
+                                <td>{{form.sex}}</td>
                             </tr>
                         </tbody>
                     </table>
@@ -37,11 +41,81 @@
                                     <h4 class="modal-title">User Details</h4>
                                 </div>
                                 <div class="modal-body">
-                                    <p>One fine body&hellip;</p>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title">User Personal Information</h3>
+                                        </div>
+                                        <div class="panel-body">
+                                           <table class="table table-hover table-borderd">
+                                                <tr>
+                                                    <th>First Name</th>
+                                                    <th>Last Name</th>
+                                                    <th>Email</th>
+                                                </tr>
+                                                <tr>
+                                                    <td>{{currentVal.firstName}}</td>
+                                                    <td>{{currentVal.lastName}}</td>
+                                                    <td>{{currentVal.email}}</td>
+                                                </tr>
+                                           </table>
+                                           <table class="table table-hover table-borderd table-striped">
+                                                <tr>
+                                                    <th>Gender</th>
+                                                    <th>Maritial Status</th>
+                                                    <th>Mobile Number</th>
+                                                    <th>City</th>
+                                                </tr>
+                                                <tr>
+                                                    <td>{{currentVal.sex}}</td>
+                                                    <td>{{currentVal.wife}}</td>
+                                                    <td>{{currentVal.tel}}</td>
+                                                    <td>{{currentVal.city}}</td>
+                                                </tr>
+                                           </table>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title">Basic Property Details</h3>
+                                        </div>
+                                        <div class="panel-body">
+                                            <table class="table table-hover table-borderd">
+                                                <tr>
+                                                    <th>Site Location</th>
+                                                    <th>Budget</th>
+                                                    <th>Property Type</th>
+                                                    <th>Rent / Purchase</th>
+                                                </tr>
+                                                <tr>
+                                                    <td>{{currentVal.siteloc}}</td>
+                                                    <td>{{currentVal.budget}}</td>
+                                                    <td>{{currentVal.size}}</td>
+                                                    <td>{{currentVal.rentPurchase}}</td>
+                                                </tr>
+                                           </table>
+                                           <table class="table table-hover table-borderd table-striped">
+                                                <tr>
+                                                    <th>With Bedroom</th>
+                                                    <th>With Bathroom</th>
+                                                    <th>Property Address</th>
+                                                    <th>Property City</th>
+                                                </tr>
+                                                <tr>
+                                                    <td>{{currentVal.bedroom}}</td>
+                                                    <td>{{currentVal.bathroom}}</td>
+                                                    <td>{{currentVal.paddress}}</td>
+                                                    <td>{{currentVal.pcity}}</td>
+                                                </tr>
+                                           </table>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary">Delete</button>
+                                    <button type="button" class="btn btn-primary" ng-click="delete($index)">Delete</button>
                                 </div>
                             </div>
                         </div>
